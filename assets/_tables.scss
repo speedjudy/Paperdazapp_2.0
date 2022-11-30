@@ -1,0 +1,90 @@
+.custom-table {
+  @apply text-sm w-full whitespace-nowrap;
+  border-collapse: separate;
+  border-spacing: 0px 0px;
+  & tr {
+    @apply border-b border-gray-100;
+  }
+
+  & th {
+    @apply pt-8 pb-3;
+  }
+
+  & td {
+    @apply py-3;
+  }
+
+  & td,
+  & th {
+    @apply px-2 border-b border-gray-100;
+    &:first-child {
+      @apply pl-5;
+    }
+    &:last-child {
+      @apply pr-5;
+    }
+
+    &.fixed-col {
+      position: sticky;
+      background: white;
+      &.left {
+        left: -0.1px;
+        &.scrolled {
+          box-shadow: 3px 0px 8px rgb(0 0 0 / 14%);
+        }
+      }
+      &.right {
+        right: -0.1px;
+        &.scrolled {
+          box-shadow: 0px 3px 8px rgb(0 0 0 / 14%);
+        }
+      }
+    }
+  }
+
+}
+
+.table-menu-dropdown-menu {
+  @apply rounded-xl overflow-hidden;
+
+  padding: 0 !important;
+  background-color: #F8F8F8 !important;
+  border-radius: 10px !important;
+
+  .dropdown-item {
+    @apply text-center text-black text-sm font-medium cursor-pointer relative;
+
+    & > *:not(.suffix-icon):not(.inner-dropdown):not(input)
+    {
+      @apply px-5 py-3 relative block cursor-pointer;
+    }
+
+    &:not(:last-child) {
+      @apply border-b border-[#C4C4C4];
+    }
+
+    & .suffix-icon {
+      @apply absolute top-1/2 transform -translate-y-1/2 right-3;
+    }
+
+    input[type]:checked ~ * .suffix-icon, input[type]:checked ~ .suffix-icon {
+      @apply transform rotate-180;
+    }
+
+    .inner-dropdown {
+      max-height: 0px;
+      overflow: hidden;
+    }
+
+    input[type]:checked ~ .inner-dropdown {
+      max-height: unset;
+    }
+
+    .inner-dropdown-item {
+      @apply px-5 py-2 bg-white;
+      &:not(:last-child) {
+        @apply border-b border-[#C4C4C4];
+      }
+    }
+  }
+}

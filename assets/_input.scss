@@ -1,0 +1,9 @@
+input {
+  @apply caret-paperdazgreen-400 ;
+
+  &:focus,
+  &:active {
+    outline: none;
+    @apply border border-paperdazgreen-400;
+  }
+}

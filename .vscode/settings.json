@@ -1,0 +1,7 @@
+{
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": false
+}
