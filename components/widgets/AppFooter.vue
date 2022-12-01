@@ -8,7 +8,7 @@
         <span class="text-[#888392]">Contactless Paper</span>
       </div>
       <div
-        class="flex-1 flex flex-wrap flex-col lg:flex-row items-center gap-15 sm:gap-16 text-[#6C6777] justify-center"
+        class="flex-1 flex flex-wrap flex-col lg:flex-row items-center gap-15 lg:gap-8 sm:gap-4 text-[#6C6777] justify-center"
       >
         <a href="/#key-features-section">Features</a>
         <nuxt-link to="/packages/?type=default">Packages</nuxt-link>
