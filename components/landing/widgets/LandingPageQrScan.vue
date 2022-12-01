@@ -4,7 +4,7 @@
       <div class="container">
         <h1 class="font-bold text-4xl text-center mb-12">Paperdaz Business Profile</h1>
         <div class="flex flex-wrap gap-3">
-          <div class="drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)] bg-white flex-auto md:w-32 flex-1">
+          <div class="drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)] bg-white flex-1">
             <div class="flex flex-col justify-center content-between">
               <div class="px-8 py-8 bg-paperdazgreen-300 text-center">
                 <h3 class="text-white font-bold mb-4 text-[38px]">Apple Dental</h3>
@@ -17,7 +17,7 @@
               </div>
             </div>
           </div>
-          <div class="flex-1 px-3 md:px-6 lg:px-10 pb-5 pt-8 md:pb-8 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)] bg-white text-center flex-auto w-100 md:w-64 flex flex-col justify-between">
+          <div class="flex-1 px-3 md:px-6 lg:px-10 pb-5 pt-8 md:pb-8 drop-shadow-[2px_2px_4px_rgba(0,0,0,0.3)] bg-white text-center flex flex-col justify-between">
             <div>
               <h4 class="font-bold text-3xl mb-5">
                 Scan Apple Dental’s QR Code to see Business Paperdaz Files!

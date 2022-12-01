@@ -40,7 +40,7 @@
           </nuxt-link>
         </div>
        
-	<nuxt-link to="/#key-features-section" class="">Features </nuxt-link>
+	        <nuxt-link to="/#key-features-section" class="xs:ml-6">Features </nuxt-link>
           <div class="h-px bg-paperdazgray-300 w-full lg:hidden"></div>
           <!-- <a href="/#upload-file-section" class="xs:ml-6">Upload File </a> -->
           <!-- <div class="h-px bg-paperdazgray-300 w-full lg:hidden"></div> -->
