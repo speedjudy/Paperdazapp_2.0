@@ -6,7 +6,9 @@
     <landing-divider />
     <landing-page-info />
     <landing-page-qr-scan />
-    <landing-page-key-features class="bg-gradient-to-t from-white to-[rgba(119,195,96,0.1)]" />
+    <landing-page-key-features
+      class="bg-gradient-to-t from-white to-[rgba(119,195,96,0.1)]"
+    />
     <landing-join-section />
   </div>
 </template>
@@ -35,7 +37,6 @@ import LandingDivider from '~/components/landing/widgets/LandingDivider.vue'
   //   location.href = to.fullPath
   //   return
   // },
-
 })
 export default class LandingPage extends Vue {
   beforeframe = true
@@ -45,7 +46,16 @@ export default class LandingPage extends Vue {
   get gsapReadyToSetup() {
     return this.gsapLoaded && this.motionPluginLoaded
   }
-
+  mounted() {
+    if (sessionStorage.getItem("requestSentFlag")) {
+      this.$notify({
+        message: 'Request has been sent.',
+      })
+    }
+    setTimeout(function(){
+      sessionStorage.setItem("requestSentFlag", false);
+    },300);
+  }
   head() {
     return {
       title: 'Paperdaz',
@@ -101,4 +111,3 @@ export default class LandingPage extends Vue {
   } // end watcher method watchGsap
 } // end class LandingPage
 </script>
-

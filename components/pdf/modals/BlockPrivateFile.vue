@@ -45,7 +45,7 @@
       </template>
       <!-- Start:: Body -->
       
-       <p class="w-[90%] ml-[5%] text-center pb-8 break-normal font-semibold">File marked private. You must be logged in to ask file owner to {Action}</p>
+       <p class="w-[90%] ml-[5%] text-center pb-8 break-normal font-semibold">File marked private. You must be logged in to ask file owner to {{this.file.fileAction}}</p>
        <!-- <p class="w-[90%] ml-[5%] text-center pb-8 break-normal font-semibold" v-if="!$auth.loggedIn">Login or register to ask for permission</p> -->
       <div class="flex justify-around">
         <button
@@ -138,6 +138,11 @@
     },
     mounted() {
       this.showModal = this.visible
+      console.log(this.file.fileAction, this.file.user.companyName, this.file, "checking");
+      if (this.file.filePrivacy==="private") {
+        sessionStorage.setItem("fileActionWhenSearch", this.file.fileAction);
+        sessionStorage.setItem("companyNameWhenSearch", this.file.user.companyName);
+      }
     },
     methods: {
       checkParamsPermission(){

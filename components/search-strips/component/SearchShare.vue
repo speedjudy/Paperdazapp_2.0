@@ -1,6 +1,6 @@
 <template>
   <div class="self-center flex items-center">
-    <button
+    <!-- <button
       @click="setFileFavourite"
       class="mr-1.5 pr-1.5 border-[#EBEBEB] border-r "
       v-if="$auth.loggedIn && showShareIcon && favouriteFileLoaded"
@@ -12,7 +12,7 @@
         height="22"
       />
       </span>
-    </button>
+    </button> -->
     <button @click="shareInDevice">
       <ShareIcon />
     </button>

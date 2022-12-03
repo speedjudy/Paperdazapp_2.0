@@ -2,19 +2,20 @@
   <article
     class="cursor-pointer w-full py-4 text-[#9F9F9F] grid grid-cols-[max-content,1fr,max-content] gap-4 items-center relative"
   >
-  <div 
-  v-if="isPrivate"
-  class="absolute top-[calc(25%-12px)] left-0 bg-white p-1 rounded-full">
-    <EyeSlashedIcon width="20px" height="20px" color="rgb(98,164,78)"/></div>
+    <!-- <div 
+    v-if="isPrivate"
+    class="absolute top-[calc(25%-12px)] left-0 bg-white p-1 rounded">
+      <EyeSlashedIcon width="20px" height="20px" color="rgb(98,164,78)"/>
+    </div> -->
     <img
       v-if="record.profilePicture "
      :src="record.profilePicture"
       alt=""
-      class="h-16 w-16 rounded-lg object-cover"
+      class="h-16 w-16 rounded object-cover"
     />
     <letter-avatar
       v-else
-      class="h-16 w-16 rounded-lg object-cover"
+      class="h-16 w-16 rounded object-cover"
       :username="(record.user || {}).companyName || (record.user || {}).firstName"
     />
     <nuxt-link  class="overflow-hidden w-[100%]" :to="`/pdf/${record.paperLink}`">
@@ -40,7 +41,7 @@ export default Vue.extend({
   components: { SearchShare, LockFillIcon, EyeSlashedIcon, LetterAvatar },
   name: 'FileSearchStrip',
   mounted(){
-    // console.log("file",this.record)
+    // console.log("record:",this.record)
   },
   computed:{
     isPrivate(){

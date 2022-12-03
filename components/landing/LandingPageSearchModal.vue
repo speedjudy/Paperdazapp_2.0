@@ -16,22 +16,22 @@
         <button
           class="bg-paperdazgreen-400 rounded-lg text-white h-full w-10 grid place-items-center absolute right-0 top-0"
         >
-          <search-icon height="18" width="18" class="" />
+          <search-white-icon height="18" width="18" class="" />
         </button>
       </form>
 
       <div
-        class="mt-5 bg-white rounded-lg whitespace-nowrap overflow-hidden transition transform duration-200"
+        class="mt-4 bg-white rounded-lg whitespace-nowrap overflow-hidden transition transform duration-200"
         :class="[
           this.queryString
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 translate-y-[5%] pointer-events-none',
         ]"
       >
-        <div
+        <!-- <div
           v-if="this.queryString"
           class="px-4 flex h-12 text-sm border-b border-gray-100 font-medium"
-        >
+        > -->
           <!-- <button
             class="tab-button"
             :class="{ active: key == activeTab }"
@@ -42,15 +42,15 @@
           >
             {{ key }} ({{ searchResult[key].total }})
           </button> -->
-          <h4
+          <!-- <h4
             class="tab-button"
             v-for="key in Object.keys(searchResult || {})"
             :key="key"
             :class="{ active: key == activeTab }"
           >
             {{ key }} ({{ searchResult[key].total }})
-          </h4>
-        </div>
+          </h4> -->
+        <!-- </div> -->
         <div
           class="max-h-[70vh] custom-scrollbar overflow-y-auto p-4"
           v-loading="(loadingArray || []).length > 0"
@@ -84,7 +84,7 @@ import Vue from 'vue'
 import _ from 'lodash'
 
 import HeartOutlineIcon from '../svg-icons/HeartOutlineIcon.vue'
-import SearchIcon from '../svg-icons/SearchIcon.vue'
+import SearchWhiteIcon from '../svg-icons/SearchWhiteIcon.vue'
 import ShareOutlineIcon from '../svg-icons/ShareOutlineIcon.vue'
 import FileSearchStrip from '../search-strips/FileSearchStrip.vue'
 import UserSearchStripVue from '../search-strips/UserSearchStrip.vue'
@@ -92,7 +92,7 @@ import CompanySearchStripVue from '../search-strips/CompanySearchStrip.vue'
 
 export default Vue.extend({
   components: {
-    SearchIcon,
+    SearchWhiteIcon,
     HeartOutlineIcon,
     ShareOutlineIcon,
     FileSearchStrip,
@@ -245,7 +245,7 @@ export default Vue.extend({
 }
 
 .search-input {
-  @apply h-10 bg-white shadow rounded-lg w-full  pl-2 pr-14;
+  @apply h-10 bg-white shadow rounded-[15px] w-full  pl-2 pr-14;
 }
 
 .tab-button {

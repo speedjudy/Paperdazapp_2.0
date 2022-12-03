@@ -474,6 +474,11 @@ export default mixins(PdfAuth).extend({
       if (!this.isCreator) {
         this.displayPDF = false
         this.showBlockPrivate = true
+        console.log("auth",this.$auth.loggedIn);
+        if (this.$auth.loggedIn) {
+          sessionStorage.setItem("requestSentFlag", true);
+          this.$nuxt.$router.push('/')
+        }
         this.checkUserPermission()
       } else {
         this.displayPDF = true

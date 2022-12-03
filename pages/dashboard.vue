@@ -7,6 +7,9 @@
     <floating-action-button @click.native="showUploadModalFunction" />
     <upload-document-modal @showMaxPaperlinkModalFunc="showMaxPaperlinkModalFunc" v-model="showUploadDocumentModal" />
     <MaxPaperlinkModal :totalFile="totalRegisteredPaperlink" v-model="showMaxPaperlinkModal" />
+    <RequestSentNotificationModal
+      v-model="showRequestSentModal"
+      />
   </div>
 </template>
 
@@ -33,6 +36,7 @@ import { ErrorHandler } from '~/components/functions/ErrorFunction'
 import jwt from 'jsonwebtoken'
 import UserTypeEnum from '~/models/UserTypeEnum'
 import MaxPaperlinkModal from '~/components/company-files/Tabs/MaxPaperlinkModal.vue'
+import RequestSentNotificationModal from '~/components/company-files/Tabs/RequestSentNotificationModal.vue'
 
 export default Vue.extend({
   components: {
@@ -46,7 +50,8 @@ export default Vue.extend({
     CalendarIcon,
     UploadDocumentModal,
     LedgerIcon,
-    MaxPaperlinkModal
+    MaxPaperlinkModal,
+    RequestSentNotificationModal
   },
   layout: 'dashboard',
   // auth:'guest',
@@ -62,6 +67,7 @@ export default Vue.extend({
       totalUploadPaperlink: null,
       showMaxPaperlinkModal: false,
       showUploadIcon: false,
+      showRequestSentModal: false,
       tabs: [
         {
           label: 'ledger',
@@ -123,7 +129,9 @@ export default Vue.extend({
   },
   mounted() {
     this.maxFileUpload()
-
+    if (sessionStorage.getItem("fileActionWhenSearch")) {
+      this.showRequestSentModal = true
+    }
   },
   methods: {
     checkingLaggedPackage(){
