@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="px-5 bg-white lg:rounded-lg w-full flex items-center justify-between shadow"
+    class="px-5 bg-white lg:rounded-lg w-full flex items-center justify-between"
     :class="[compact ? 'py-1 h-12' : 'min-h-[60px] sm:min-h-[70px] py-4 h-16']"
   >
     <p
