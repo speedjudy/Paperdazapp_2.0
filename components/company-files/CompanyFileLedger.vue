@@ -72,9 +72,147 @@
               No Folders
             </span>
           </div>
+          <div class="my-12 grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] md:grid-cols-4 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-x-2 sm:gap-x-[3.5rem] gap-y-10 px-[3rem]">
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+              <div
+                class="items-center border-2 p-[15px] rounded-[16px] border-[#909090]"
+              >
+                <div class="overflow-hidden px-[10px]">
+                    <span class="border-none inline-block	float-left pt-[4px]">
+                      <img
+                        class="w-[25px]"
+                        src="~/assets/img/Vector.png"
+                      />
+                    </span>
+                    <p 
+                    class="text-base font-medium text-center text-[#414142] truncate cursor-pointer inline-block ml-[27px]">
+                      Forms 
+                    </p>
+                    <span class="float-right">1</span>
+                  </div>
+              </div>
+          </div>
           <!--END: No folder container-->
 
-          <table class="custom-table" v-else>
+          <!---- <table class="custom-table" v-else>
             <thead class="text-[#414142]">
               <tr>
                 <th class="w-12 text-left">Folder Name</th>
@@ -83,9 +221,9 @@
                 <th class="text-center fixed-col right"></th>
               </tr>
             </thead>
-            <!-- <tr
+             <tr
             class="py text-center w-100%"
-             v-if="folders.length < 1"> <td class="w-full my-4 font-semibold text-paperdazgray-300">No folder created</td></tr> -->
+             v-if="folders.length < 1"> <td class="w-full my-4 font-semibold text-paperdazgray-300">No folder created</td></tr>
             <tbody class="text-[#505050]">
               <tr v-for="(content, i) in folders" :key="i">
                 <td class="text-left">
@@ -150,7 +288,7 @@
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table>   -->
         </div>
         <!-- End:: Folders -->
                   <FilePagination :totalFile="totalFolder" @setPage="setFolderPage"/>
@@ -292,6 +430,10 @@
       @resetUserFile="resetUserFile"
       v-model="showCreateCompanyFolder"
     />
+    <CreateTeam
+      @refresh="setRefresh"
+      v-model="showCreateTeam"
+    />
     <EditCompanyFolder
       @refresh="setRefresh"
       :file="fileProps"
@@ -355,6 +497,7 @@ import ShareOutlineIcon from '../svg-icons/ShareOutlineIcon.vue'
 import EmptyFileLedger from '../widgets/EmptyFileLedger.vue'
 import FloatingActionButton from '../widgets/FloatingActionButton.vue'
 import CreateCompanyFolder from './Tabs/CreateCompanyFolder.vue'
+import CreateTeam from './Tabs/CreateTeam.vue'
 import EditCompanyFolder from './Tabs/EditCompanyFolder.vue'
 import DeleteCompanyFolder from './Tabs/DeleteCompanyFolder.vue'
 import AddCompanyfiles from './Tabs/AddCompanyfiles.vue'
@@ -385,6 +528,7 @@ export default Vue.extend({
     HeartOutlineIcon,
     ShareOutlineIcon,
     CreateCompanyFolder,
+    CreateTeam,
     EditCompanyFolder,
     DeleteCompanyFolder,
     AddCompanyfiles,
@@ -407,6 +551,7 @@ export default Vue.extend({
       returnedDataPage: 0,
       totalFile: null,
       showCreateCompanyFolder: false,
+      showCreateTeam: true,
       showEditCompanyFolder: false,
       showDeleteCompanyFolder: false,
       folderProperty: '',

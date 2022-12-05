@@ -36,10 +36,10 @@
       @dragover.prevent="dragover"
       @dragleave="dragleave"
       @drop.prevent="drop"
-      class="cursor-pointer mt-2 mx-auto px-4 py-8 flex flex-col items-center border-2 border-paperdazgreen-300 rounded-2xl max-w-3xl"
+      class="cursor-pointer mt-2 mx-auto px-4 py-8 flex flex-col items-center border-2 border-paperdazgreen-300 bg-white rounded-2xl max-w-3xl"
       :class="[isDraggedOver ? 'border-solid' : 'border-dashed']"
     >
-      <span class="circle circle-46 bg-paperdazgreen-300 text-white mb-5">
+      <span class="circle circle-46 bg-paperdazgreen-300 text-white">
         <cloud-icon width="47" height="47" />
       </span>
 
@@ -269,12 +269,13 @@ export default Vue.extend({
 * >>> .el-dialog__header,
 * >>> .el-dialog__footer {
   text-align: left !important;
+  background: #DBE9D2;
 }
 
 * >>> .el-dialog__body {
   /* padding-top: 0 !important;
   padding-bottom: 0 !important; */
-  background: #fcfcfd;
+  background: #DBE9D2;
 }
 
 * >>> .el-select .el-input__inner {

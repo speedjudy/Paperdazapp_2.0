@@ -31,28 +31,25 @@
     </div>
     <!--End:: Close Button -->
     <template #title>
-      <h4 class="text-center font-semibold text-xl">Create Folder</h4>
+      <h4 class="text-left font-semibold text-xl">Create a Team</h4>
     </template>
     <!-- Start:: Body -->
     <p
       class="text-center block font-medium  mx-auto mb-6 whitespace-none"
     >
-       <input
-       v-model="folderName"
-       class="w-full py-2 px-4 border-[1px] border-paperdazgrey-200 rounded-md"
-       placeholder="Enter Folder Name"
-       />
-    </p>
-    <div class="flex justify-around">
+      <input
+        type="text"
+        class="search-input w-[75%] h-10 transition pl-4 mr-2 bg-transparent flex-1 border border-paperdazgreen-300 rounded-tl-[1rem] rounded-bl-[1rem] focus:border-paperdazgreen-700 outline-none"
+        placeholder="Email"
+      />
       <button
-        class="disabled:bg-opacity-50 disabled:cursor-progress h-10 text-xs w-[90%] 
+        class="disabled:bg-opacity-50 disabled:cursor-progress h-10 text-xs w-[20%] 
         shadow-md
-         text-white rounded-[1rem] shadow bg-paperdazgreen-300"
+         text-white rounded-[2rem] shadow bg-paperdazgreen-400"
         :disabled="loading"
-        @click="onSubmit"
       >
         <span class="inline-flex gap-1 items-center text-[16px]">
-         Create
+         Invite
           <spinner-dotted-icon
             v-show="loading"
             height="20"
@@ -61,6 +58,48 @@
           />
         </span>
       </button>
+    </p>
+    <p class="text-[18px] font-semibold mb-4">Copy link</p>
+    <ul>
+      <li class="flex mb-2">
+        <span
+          class="p-0.5 border border-paperdazgreen-400 circle circle-17"
+        >
+          <img
+            src='/img/placeholder_picture.png'
+            alt=""
+            class='w-full h-full rounded-full'
+          />
+        </span>
+        <div class="overflow-hidden">
+          <p class="text-base font-medium text-[#414142] truncate">
+            <nuxt-link to="pdf" class="ml-2">
+              Abdallah hamouda
+            </nuxt-link>
+          </p>
+        </div>
+      </li>
+      <li class="flex mb-2">
+        <span
+          class="p-0.5 border border-paperdazgreen-400 circle circle-17"
+        >
+          <img
+            src='/img/placeholder_picture.png'
+            alt=""
+            class='w-full h-full rounded-full'
+          />
+        </span>
+        <div class="overflow-hidden">
+          <p class="text-base font-medium text-[#414142] truncate">
+            <nuxt-link to="pdf" class="ml-2">
+              Abdallah hamouda
+            </nuxt-link>
+          </p>
+        </div>
+      </li>
+    </ul>
+    <div class="flex justify-around">
+      
     </div>
     <!-- end :: body -->
   </el-dialog>
@@ -70,29 +109,22 @@
 import Vue from 'vue'
 import SpinnerDottedIcon from '~/components/svg-icons/SpinnerDottedIcon.vue'
 export default Vue.extend({
-  name: 'create-company-folder',
+  name: 'create-team',
   components: { SpinnerDottedIcon },
   model: {
     prop: 'visible',
     event: 'updateVisibility',
   },
   props: {
-    packagename: {
-       type: String
-    },
     visible: {
       type: Boolean,
       default: false,
     },
-    userFile:{
-      type: Object
-    }
   },
   data() {
     return {
       showModal: false,
       errorMessage: '',
-      folderName:'',
       loading: false,
     }
   },
@@ -110,72 +142,7 @@ export default Vue.extend({
   methods: {
     closeModal() {
       this.$emit('updateVisibility', false)
-    },
-    async moveCompanyFiles(index){
-       if(Object.keys(this.userFile).length === 0) return
-
-       this.$axios
-        .$patch(`/files/${this.userFile.id}`, {
-          folderId: index,
-        })
-        .then(() => {
-          this.$notify.success({
-          title: 'File',
-          message: 'Moved successfully',
-          })
-          this.$emit('updateVisibility', false)
-          this.$emit('refresh')
-          this.$emit("resetUserFile")
-          })
-        .catch((err) => {
-          this.$notify.error({
-          title: 'Package',
-          message: 'Unable to move file',
-          })
-        })
-        .finally(() => {
-          this.loading = false
-        })
-    },
-    onSubmit() {
-      event?.preventDefault()
-      // return
-      if(this.folderName.trim().length < 1) return
-      if (this.loading) return
-
-      this.loading = true
-      this.errorMessage = ''
-
-       
-       let folderData = {
-        name: this.folderName
-       }
-
-
-      this.$axios
-        .$post(`/folders`,folderData)
-        .then(async(response) => {
-           this.$notify.success({
-           title: 'Folder',
-           message: 'Folder created successfully',
-           })
-          await this.moveCompanyFiles(response.id)
-          this.$emit("resetUserFile")
-          this.$nuxt.refresh()
-          this.$emit('updateVisibility', false)
-          this.$emit('refresh')
-          this.folderName = ''
-        })
-        .catch((err) => {
-          this.$notify.error({
-          title: 'Folder',
-          message: 'Unable to created Folder',
-          })
-        })
-          .finally(()=>{
-            this.loading = false
-          })
-    },
+    }
   },
 })
 </script>
